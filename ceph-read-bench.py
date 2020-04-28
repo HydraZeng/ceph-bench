@@ -68,7 +68,7 @@ def obj_aio_read(tid, ioctx, read_res, obj):
 def wait_finish(handlers):
     for i, handler in enumerate(handlers):
         comp = handler.result()
-        comp.wait_for_complete()
+        comp.wait_for_complete_and_cb()
 
 def print_statistics(bw_mbs, iops, lat):
     print('========== BW ==========')
